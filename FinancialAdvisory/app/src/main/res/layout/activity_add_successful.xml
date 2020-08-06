@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#29304D"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Congrats!"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="27sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You're one step closer to financial independence."
+                android:textColor="#ffffff"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#ffffff"
+            android:padding="25dp"
+            >
+            <LinearLayout
+                android:layout_below="@+id/dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_dashboard2"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Expense detail"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="19sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/undraw_successful_purchase_uyin"
+                    android:layout_margin="50dp" />
+
+                <TextView
+                    android:id="@+id/review"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="$1000"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="27sp"
+                    android:textColor="#2573D5"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="19sp"
+                android:textColor="#000000" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        >
+
+        <Button
+            android:id="@+id/cancelDep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/custom_grey_button"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/sendDeposits"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/custom_blue_button"
+            android:text="Send"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#ffffff"
+            android:textAllCaps="false"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#29304D"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Deposits"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="27sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How much would you like to add?"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_below="@+id/dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/custom_dashboard2"
+
+                android:padding="25dp"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add amount"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="19sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="25dp"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/minus"
+                        android:background="@android:color/transparent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/minus" />
+
+                    <EditText
+                        android:id="@+id/amount"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="500.00"
+                        android:textColor="#2573D5"
+                        android:inputType="numberDecimal"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="27sp"
+                        android:background="@android:color/transparent"/>
+
+                    <ImageButton
+                        android:id="@+id/plus"
+                        android:background="@android:color/transparent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/plus" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    >
+
+                    <SeekBar
+                        android:id="@+id/seekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:min="0"
+                        android:max="1000"
+                        android:progress="500"
+                        android:thumbTint="#2573D5"
+                        android:progressTint="#2573D5" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        >
+
+        <Button
+            android:id="@+id/cancelDep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/custom_grey_button"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/sendDeposits"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/custom_blue_button"
+            android:text="Send"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#ffffff"
+            android:textAllCaps="false"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</RelativeLayout>

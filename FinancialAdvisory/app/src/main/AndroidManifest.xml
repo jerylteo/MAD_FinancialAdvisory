@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.nyp.financialadvisory">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".CurrencyConverter"></activity>
+        <activity android:name=".History" />
+        <activity android:name=".Analysis" />
+        <activity android:name=".AddSuccessful" />
+        <activity android:name=".AddDeposit" />
+        <activity android:name=".AddExpense" />
+        <activity android:name=".Login" />
+        <activity android:name=".Success" />
+        <activity android:name=".Registration" />
+        <activity
+            android:name=".JustStarted"
+            android:label="@string/title_activity_just_started"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
