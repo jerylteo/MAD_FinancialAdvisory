@@ -114,9 +114,12 @@ public class AddExpense extends AppCompatActivity {
                             dbAdapter.close();
                         }
 
-                        String input = category.toLowerCase().concat("Bal");
+                        // why is this not working?
+//                        String input = category.toLowerCase().concat("Bal");
+//                        editor.putFloat(input, Float.parseFloat(amount.getText().toString()));
+//                        editor.commit();
 
-                        editor.putFloat(input, Float.parseFloat(amount.getText().toString()));
+                        editor.putFloat("latest", Float.parseFloat(amount.getText().toString()));
                         editor.commit();
 
                         startActivity(new Intent(AddExpense.this, AddSuccessful.class));

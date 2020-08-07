@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean retrieveRecordsFromDB() {
         boolean success = false;
         float bal = 0;
-        float[] catBal = {0, 0, 0, 0};
+        float[] catBal = {0, 0, 0};
 
         SharedPreferences profilePrefs = getSharedPreferences("profile", MODE_PRIVATE);
         String name = profilePrefs.getString("name", "");
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if (cursor != null && cursor.getCount() > 0) {
                         while (cursor.moveToNext()) {
-                            if (cursor.getString(2) == "Expenses") {
+                            if (cursor.getString(2).endsWith("Expenses")) {
                                 catBal[i] += cursor.getFloat(4);
                             }
                         }
@@ -134,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
             editor.commit();
 
+            System.out.println("CATBAL ==========");
             for (float f : catBal) {
                 System.out.println(f);
             }
@@ -146,10 +147,10 @@ public class MainActivity extends AppCompatActivity {
     public void updateRecordsFromPrefs() {
         SharedPreferences prefs = getSharedPreferences("records", MODE_PRIVATE);
 
-        viewBal.setText(Float.toString(prefs.getFloat("bal", 0.0f)));
-        foodBal.setText(Float.toString(prefs.getFloat("foodBal", 0.0f)));
-        transportBal.setText(Float.toString(prefs.getFloat("transportBal", 0.0f)));
-        entertainmentBal.setText(Float.toString(prefs.getFloat("entertainmentBal", 0.0f)));
+        viewBal.setText("$"+Float.toString(prefs.getFloat("bal", 0.0f)));
+        foodBal.setText("$"+Float.toString(prefs.getFloat("foodBal", 0.0f)));
+        transportBal.setText("$"+Float.toString(prefs.getFloat("transportBal", 0.0f)));
+        entertainmentBal.setText("$"+Float.toString(prefs.getFloat("entertainmentBal", 0.0f)));
     }
 
     View.OnClickListener clickListener = new View.OnClickListener() {

@@ -100,6 +100,8 @@ public class AddDeposit extends AppCompatActivity {
                         input += Float.parseFloat(amount.getText().toString());
 
                         editor.putFloat("bal", input);
+                        editor.putFloat("latest", Float.parseFloat(amount.getText().toString()));
+
                         editor.commit();
 
                         startActivity(new Intent(AddDeposit.this, AddSuccessful.class));

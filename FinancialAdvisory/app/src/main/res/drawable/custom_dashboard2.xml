@@ -3,10 +3,4 @@
     <solid android:color="#F7F9FC" />
     <corners android:topLeftRadius="30dp" android:topRightRadius="30dp" />
 
-    <padding
-        android:bottom="25dp"
-        android:top="25dp"
-        android:left="25dp"
-        android:right="25dp"
-        />
 </shape>
