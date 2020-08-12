@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your latest 5 records"
+                android:text="Your latest 10 records"
                 android:textColor="#ffffff"
                 android:fontFamily="@font/poppins_medium"
                 android:textSize="16sp"
@@ -73,64 +73,12 @@
             </LinearLayout>
 
             <TableLayout
+                android:id="@+id/recordTable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
                 >
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/custom_icon"
-                            android:src="@drawable/wallet" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/poppins_semibold"
-                                android:text="Food"
-                                android:textColor="#000000"
-                                android:textSize="14dp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/poppins_medium"
-                                android:text="Wallet"
-                                android:textSize="12dp" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/foodBal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/poppins_medium"
-                            android:gravity="center"
-                            android:text="$10"
-                            android:textSize="16dp" />
-
-                    </LinearLayout>
-                </TableRow>
 
             </TableLayout>
 

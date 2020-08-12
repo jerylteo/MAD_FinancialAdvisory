@@ -30,7 +30,7 @@ public class Login extends AppCompatActivity {
 
         edit_name = findViewById(R.id.name);
         backBtn = findViewById(R.id.back);
-        startBtn = findViewById(R.id.login);
+        startBtn = findViewById(R.id.start);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

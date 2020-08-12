@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton analysisBtn = null;
     ImageButton historyBtn = null;
     ImageButton currencyBtn = null;
+    ImageButton settingsBtn = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             analysisBtn = findViewById(R.id.analysis);
             historyBtn = findViewById(R.id.history);
             currencyBtn = findViewById(R.id.currency);
+            settingsBtn = findViewById(R.id.settings);
 
             addBtn.setOnClickListener(clickListener);
             addExpenseBtn.setOnClickListener(clickListener);
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             analysisBtn.setOnClickListener(clickListener);
             historyBtn.setOnClickListener(clickListener);
             currencyBtn.setOnClickListener(clickListener);
+            settingsBtn.setOnClickListener(clickListener);
 
             if (retrieveRecordsFromDB()) {
                 updateRecordsFromPrefs();
@@ -146,8 +149,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateRecordsFromPrefs() {
         SharedPreferences prefs = getSharedPreferences("records", MODE_PRIVATE);
+        SharedPreferences pPres = getSharedPreferences("profile", MODE_PRIVATE);
 
-        viewBal.setText("$"+Float.toString(prefs.getFloat("bal", 0.0f)));
+        viewBal.setText("$"+Float.toString(prefs.getFloat("bal", 0.0f)) + " " + pPres.getString("currency", ""));
         foodBal.setText("$"+Float.toString(prefs.getFloat("foodBal", 0.0f)));
         transportBal.setText("$"+Float.toString(prefs.getFloat("transportBal", 0.0f)));
         entertainmentBal.setText("$"+Float.toString(prefs.getFloat("entertainmentBal", 0.0f)));
@@ -165,6 +169,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, History.class));
             } else if (v == currencyBtn) {
                 startActivity(new Intent(MainActivity.this, CurrencyConverter.class));
+            } else if (v == settingsBtn) {
+                startActivity(new Intent(MainActivity.this, Settings.class));
             }
         }
     };

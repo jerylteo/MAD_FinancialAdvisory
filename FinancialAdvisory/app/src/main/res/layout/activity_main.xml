@@ -13,25 +13,48 @@
         android:padding="25dp"
         >
 
-        <TextView
-            android:id="@+id/bal"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="$5,342.00"
-            android:textColor="#ffffff"
-            android:fontFamily="@font/poppins_semibold"
-            android:textSize="27sp"
-            />
+            android:orientation="horizontal"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Available Balance"
-            android:textColor="#ffffff"
-            android:fontFamily="@font/poppins_medium"
-            android:textSize="16sp"
-            />
+                <TextView
+                    android:id="@+id/bal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="$5,342.00"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="27sp"
+                    />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Available Balance"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="16sp"
+                    />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gear"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

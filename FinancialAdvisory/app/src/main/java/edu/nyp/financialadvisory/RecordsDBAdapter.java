@@ -64,6 +64,11 @@ public class RecordsDBAdapter {
         return mCursor;
     }
 
+    public Cursor updateName(String old, String newName) {
+        System.out.println(old + " -> " + newName);
+        Cursor mCursor = db.rawQuery("UPDATE " + DB_TABLE + " SET name = '" + newName + "' WHERE name = '" + old + "'", null);
+        return mCursor;
+    }
 
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
@@ -81,7 +86,6 @@ public class RecordsDBAdapter {
         }
 
         public void onUpgrade (SQLiteDatabase db, int i, int i1) {
-            Log.d(TAG, "Upgrading DB from v-" + i + " to v-" + i1 + ", which will destroy all old data.");
 //            db.execSQL("DROP TABLE IF EXISTS records");
             System.out.println("Creating....");
             System.out.println(DB_CREATE);

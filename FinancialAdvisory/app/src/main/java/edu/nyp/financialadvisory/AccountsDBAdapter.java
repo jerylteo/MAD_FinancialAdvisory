@@ -11,15 +11,17 @@ public class AccountsDBAdapter {
     private static final String TAG = "AccountsDBAdapter";
     private static final String KEY_NAME = "name";
     private static final String KEY_EMAIL = "email";
+    private static final String KEY_CURRENCY = "currency";
 
     private static final String DB_NAME = "FinancialAdvisoryDB";
     private static final String DB_TABLE = "accounts";
-    private static final int DB_VERSION = 1;
+    private static int DB_VERSION = 1;
 
     private static final String DB_CREATE =
             "create table accounts (_id integer primary key " +
             "autoincrement, name text not null," +
-            "email text not null);";
+            "email text not null," +
+            "currency text not null);";
 
     private Context context;
 
@@ -45,7 +47,11 @@ public class AccountsDBAdapter {
 
     // INSERTS RECORD
     public void insertAccount(String name, String email) {
-        String sqlStatement = "INSERT into " + DB_TABLE + " (" + KEY_NAME + "," + KEY_EMAIL + ") VALUES ('"+ name +"','"+ email +"')";
+        String sqlStatement = "INSERT into " + DB_TABLE + " (" + KEY_NAME + "," + KEY_EMAIL +  "," + KEY_CURRENCY + ") VALUES ('"+ name +"','"+ email +"','SGD')";
+        db.execSQL(sqlStatement);
+    }
+    public void insertAccount(String name, String email, String currency) {
+        String sqlStatement = "INSERT into " + DB_TABLE + " (" + KEY_NAME + "," + KEY_EMAIL +  "," + KEY_CURRENCY + ") VALUES ('"+ name +"','"+ email +"','" + currency + "')";
         db.execSQL(sqlStatement);
     }
 
@@ -58,6 +64,18 @@ public class AccountsDBAdapter {
     // RETRIEVES SPECIFIC ACCOUNT
     public Cursor getAccount(String name) {
         Cursor mCursor = db.rawQuery("SELECT * FROM " + DB_TABLE + " WHERE name = '" + name + "'", null);
+        return mCursor;
+    }
+
+    public Cursor updateCurrency(String name, String currency) {
+        DB_VERSION++;
+        Cursor mCursor = db.rawQuery("UPDATE " + DB_TABLE + " SET currency = '" + currency + "' WHERE name = '" + name + "'", null);
+        return mCursor;
+    }
+    public Cursor updateName(String old, String newName) {
+        DB_VERSION++;
+        System.out.println(old + " -> " + newName);
+        Cursor mCursor = db.rawQuery("UPDATE " + DB_TABLE + " SET name = '" + newName + "' WHERE name = '" + old + "'", null);
         return mCursor;
     }
 
@@ -79,7 +97,9 @@ public class AccountsDBAdapter {
 
         public void onUpgrade(SQLiteDatabase db, int i, int i1) {
             Log.d(TAG, "Upgrading DB from v-" + i + " to v-" + i1 + ", which will destroy all old data.");
-            db.execSQL("DROP TABLE IF EXISTS accounts");
+            System.out.println("Creating....");
+            System.out.println(DB_CREATE);
+            db.execSQL(DB_CREATE);
         }
     }
 }

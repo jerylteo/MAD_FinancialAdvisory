@@ -144,6 +144,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
+                            android:layout_weight="1"
                             >
                             <ImageButton
                                 android:id="@+id/foodCat"
@@ -153,11 +154,12 @@
                                 android:background="@drawable/custom_icon"
                                 android:src="@drawable/thanksgiving" />
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Food"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textSize="12sp"
+                                android:layout_gravity="center"
                                 android:gravity="center" />
                         </LinearLayout>
 
@@ -175,11 +177,12 @@
                                 android:layout_gravity="center"
                                 android:src="@drawable/globe" />
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Transport"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textSize="12sp"
+                                android:layout_gravity="center"
                                 android:gravity="center" />
                         </LinearLayout>
 
@@ -187,6 +190,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
+                            android:layout_weight="1"
                             >
                             <ImageButton
                                 android:id="@+id/entertainmentCat"
@@ -196,11 +200,12 @@
                                 android:layout_gravity="center"
                                 android:src="@drawable/champagne" />
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Entertainment"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textSize="12sp"
+                                android:layout_gravity="center"
                                 android:gravity="center" />
                         </LinearLayout>
 

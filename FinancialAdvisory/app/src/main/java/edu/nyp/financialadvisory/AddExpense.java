@@ -93,42 +93,51 @@ public class AddExpense extends AppCompatActivity {
                 startActivity(new Intent(AddExpense.this, MainActivity.class));
             }
             else if (v == sendBtn) {
-                if (Float.parseFloat(amount.getText().toString()) > 0) {
-                    SharedPreferences profilePrefs = getSharedPreferences("profile", MODE_PRIVATE);
-                    String name = profilePrefs.getString("name", "");
+                if (category == null) {
+                    Toast.makeText(getApplicationContext(), "Please select a category.", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (Float.parseFloat(amount.getText().toString()) > 0) {
+                        SharedPreferences profilePrefs = getSharedPreferences("profile", MODE_PRIVATE);
+                        String name = profilePrefs.getString("name", "");
 
-                    RecordsDBAdapter dbAdapter = new RecordsDBAdapter(getApplicationContext());
+                        RecordsDBAdapter dbAdapter = new RecordsDBAdapter(getApplicationContext());
 
-                    SharedPreferences recordPrefs = getSharedPreferences("records", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = recordPrefs.edit();
+                        SharedPreferences recordPrefs = getSharedPreferences("records", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = recordPrefs.edit();
 
-                    try {
-                        dbAdapter.open();
-                        dbAdapter.insertRecord(name, "Expenses", category, Float.parseFloat(amount.getText().toString()));
-                    }
-                    catch (Exception e) {
-                        Log.d(TAG, e.getMessage());
-                    }
-                    finally {
-                        if (dbAdapter != null) {
-                            dbAdapter.close();
+                        if (recordPrefs.getFloat("bal", 0.0f) <= Float.parseFloat(amount.getText().toString())) {
+                            Toast.makeText(getApplicationContext(), "Insufficient Balance. Current balance: $" + recordPrefs.getFloat("bal", 0.0f), Toast.LENGTH_SHORT).show();
                         }
+                        else {
+                            try {
+                                dbAdapter.open();
+                                dbAdapter.insertRecord(name, "Expenses", category, Float.parseFloat(amount.getText().toString()));
+                            }
+                            catch (Exception e) {
+                                Log.d(TAG, e.getMessage());
+                            }
+                            finally {
+                                if (dbAdapter != null) {
+                                    dbAdapter.close();
+                                }
 
-                        // why is this not working?
+                                // why is this not working?
 //                        String input = category.toLowerCase().concat("Bal");
 //                        editor.putFloat(input, Float.parseFloat(amount.getText().toString()));
 //                        editor.commit();
 
-                        editor.putFloat("latest", Float.parseFloat(amount.getText().toString()));
-                        editor.commit();
+                                editor.putFloat("latest", Float.parseFloat(amount.getText().toString()));
+                                editor.commit();
 
-                        startActivity(new Intent(AddExpense.this, AddSuccessful.class));
+                                startActivity(new Intent(AddExpense.this, AddSuccessful.class));
+                            }
+                        }
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "The system highly doubts a 0 expenses. Please check again", Toast.LENGTH_SHORT).show();
                     }
                 }
-                else {
-                    Toast.makeText(getApplicationContext(), "The system highly doubts a 0 expenses. Please check again", Toast.LENGTH_SHORT).show();
-                }
-
             }
         }
     };

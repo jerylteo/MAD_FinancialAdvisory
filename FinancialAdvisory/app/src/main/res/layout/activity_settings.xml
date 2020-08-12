@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#29304D"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="27sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Compatibility is the key!"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/custom_dashboard"
+            android:padding="25dp"
+            >
+            <LinearLayout
+                android:layout_below="@+id/dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Account"
+                    android:textSize="19sp"
+                    android:textColor="#000000" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name: "
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email: "
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14sp" />
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Currency"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="19sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="10dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/currencySettings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="SGD"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14sp" />
+                    <Button
+                        android:id="@+id/currencyBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change Currency"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:background="@drawable/custom_blue_button"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Geolocation"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="19sp"
+                    android:textColor="#000000"
+                    >
+
+                </TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/country"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SG"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/coordinates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="1.44, 1033"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/sync"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sync"
+                        android:textAllCaps="false"
+                        android:background="@drawable/custom_blue_button"
+                        android:textColor="#ffffff"
+                        android:fontFamily="@font/poppins_semibold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        android:orientation="vertical"
+        >
+        <Button
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About Financial Advisory"
+            android:background="@drawable/custom_grey_button"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#000000"
+            android:textAllCaps="false"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <Button
+                android:id="@+id/cancel"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_grey_button"
+                android:text="Cancel"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="#000000"
+                android:textAllCaps="false"
+                android:textSize="16dp" />
+            <Button
+                android:id="@+id/save"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_blue_button"
+                android:text="Save"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
